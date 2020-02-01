@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div id="quiz-body">
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+        const myQuestions = [
+                {
+                    question: "What are the basic languages of the web?",
+                    answers: {
+                        a: "JavaScript, HTML, CSS",
+                        b: "LavaScript, METL, UPS",
+                        c: "GuavaScript, AAPL, NSX",
+                        d: "All of the above"
+                 } ,
+                    correctAnswer: "a"
+                },
+            
+                {
+                    question: "How many hours should you study outside of class to master the material?",
+                    answers: {
+                        a: "0 - 10",
+                        b: "10 - 20",
+                        c: "20 - 30",
+                        d: "30 - 40",
+                    },
+            
+                    correctAnswer: "c"
+                },
+            
+                {
+                    question: "What days are class held?",
+                    answers: {
+                        a: "Mon, Wed, Fri",
+                        b: "Mon, Tues, Wed",
+                        c: "Thurs, Fri, Sat",
+                        d: "Mon, Wed, Sat",
+                    },
+                    correctAnswer: "d"
+                },
+            
+                {
+                    question: "What time is class during the week?",
+                    answers: {
+                        a: "4pm-10pm",
+                        b: "6:30pm-12am",
+                        c: "5pm-8pm",
+                        d: "6:30pm-9:30pm",
+                    },
+                    correctAnswer: "d"
+                },
+            
+                {
+                question: "How long is the longest class? ",
+                answers: {
+                    a: "1 hour",
+                    b: "2 hours",
+                    c: "3 hours",
+                    d: "4 hours",
+                },
+                correctAnswer: "d"
+                }
+            
+            ];
+
+            //console.log(myQuestions[1].answers[a])
+
+
+            function loadQuiz() {
+                for(var i = 0; i < myQuestions.length; i++) {
+                    var quizQuestion = $("<p>").text(myQuestions[i].question);
+                    var quizAnswers = 
+                    `<ul>
+                        <li> a: ${myQuestions[i].answers.a}</li>
+                        <li> b: ${myQuestions[i].answers.b}</li>
+                        <li> c: ${myQuestions[i].answers.c}</li>
+                        <li> d: ${myQuestions[i].answers.d}</li>
+                    </ul>`
+                    $("#quiz-body").append(quizQuestion, quizAnswers)
+                }
+            }
+
+            loadQuiz();
+    </script>
+    </body>
+</html>
